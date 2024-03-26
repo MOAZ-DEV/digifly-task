@@ -2,7 +2,7 @@ import { useRouter } from "next/router";
 import ar from "src/locales/ar";
 import en from "src/locales/en";
 
-export default function textWrap(props: any) {
+export default function TextWrap(props: any) {
   const
     router = useRouter(),
     { locale } = router,

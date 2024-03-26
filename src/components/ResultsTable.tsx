@@ -20,7 +20,7 @@ export default function ResultsTable(props: any) {
   useEffect(() => {
     setList(props.list);
     console.log('done')
-  }, [props.list, setTimeout(() => { return true; }, 1000)]);
+  }, [props.list]);
   return (
     <div className="flex flex-col gap-4 w-full sm:px-11 px-6 max-w-5xl">
       <p className="text-base font-bold text-accentViolet-500">{t.res}</p>
