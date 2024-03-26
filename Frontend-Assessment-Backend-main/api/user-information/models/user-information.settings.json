@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "user_informations",
+  "info": {
+    "name": "UserInformation"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "FirstName": {
+      "type": "string"
+    },
+    "LastName": {
+      "type": "string"
+    },
+    "Email": {
+      "type": "email"
+    },
+    "Phone": {
+      "type": "biginteger"
+    }
+  }
+}

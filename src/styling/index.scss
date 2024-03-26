@@ -1,0 +1,71 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.no-scrollbar {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+body {
+    @apply flex flex-col items-center overflow-y-scroll overflow-x-hidden rtl:*:items-start ltr:*:items-end overflow-x-hidden bg-[#FCFCFE] *:p-0 *:m-0 before:-z-10 before:absolute before:right-[25%] before:top-[375px] before:-translate-y-1/2 before:flex before:h-[330px] before:w-[330px] before:rounded-full before:bg-accentViolet-400 before:blur-[275px] scroll-smooth;
+}
+
+table {
+    box-shadow: 0px 4px 12px 0px #00000014;
+    @apply table items-start text-left w-full bg-[white] rounded;
+
+    thead,
+    tbody {
+        @apply w-full;
+
+        tr {
+            @apply w-full;
+
+            th {
+                @apply opacity-40;
+            }
+
+            th,
+            td {
+                @apply rtl:text-right text-sm font-normal whitespace-nowrap w-full py-4 px-6 border-b border-b-black-300;
+            }
+        }
+    }
+}
+
+div.map {
+    .leaflet-container {
+        @apply relative before:absolute before:h-full before:w-full before:bg-accentViolet-500 before:z-[500] scale-[1.1] translate-x-[5%];
+
+        &::before {
+            background: linear-gradient(180deg, #FCFCFE 7.26%, rgba(255, 255, 255, 0) 22.64%, rgba(255, 255, 255, 0) 50.21%, rgba(255, 255, 255, 0) 89.69%, #FFFFFF 97.68%);
+        }
+
+        .leaflet-popup-content-wrapper {
+            @apply bg-accentViolet-500 *:text-[white] px-5 py-2 -translate-x-5;
+        }
+    }
+
+    .leaflet-popup-tip {
+        @apply h-16 w-5 bg-accentViolet-500 rotate-12 -translate-y-3;
+
+        -webkit-clip-path: polygon(50% 0%, 100% 0, 100% 35%, 50% 70%, 0 35%, 0 0) !important;
+        clip-path: polygon(50% 0%, 100% 0, 100% 35%, 50% 70%, 0 35%, 0 0) !important;
+    }
+}
+
+div .tiptap {
+    @apply border border-t-0 border-accentViolet-300 rounded p-10 w-full min-h-[245px];
+}
