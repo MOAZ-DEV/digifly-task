@@ -19,7 +19,7 @@ export default function Form(props: any) {
             console.log(formData);
             dispatch(pushUser());
         }}
-            className="flex flex-col gap-6 w-full sm:px-11 px-6 max-w-5xl min-w-[465px]">
+            className="flex flex-col gap-6 w-full sm:px-11 px-6 max-w-5xl md:min-w-[465px]">
             <div className="flex flex-row gap-4 w-full">
                 <Input type={t.fn} code="FirstName" required />
                 <Input type={t.ln} code="LastName" required />
