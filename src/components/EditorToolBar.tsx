@@ -85,33 +85,33 @@ const EditorToolBar = (Props: { editor: Editor | null; }) => {
             {menuIs === 'fontFamily' ?
                 <ul className="flex flex-row min-w-fit *:bg-[#F8F7FC] *:h-16 *:min-w-[73px] *:px-6 *:w-fit *:flex *:items-center *:justify-center">
                     {['Inter', 'Comic Sans MS, Comic Sans', 'serif', 'monospace', 'cursive', null].map((opt: any) => <button
-                        className='relative flex flex-row gap-3 items-center hover:bg-black-400 !min-w-fit'
+                        className='relative flex flex-row gap-3 items-center hover:bg-black-400 !min-w-fit' key={opt}
                         onClick={() => { opt === null ? editor?.commands.unsetFontFamily() : editor?.commands.setFontFamily(opt); setMenuIs(''); setFontFamily(opt) }} >{opt === null ? 'Unset' : opt}</button>)}
                 </ul> : null}
             {menuIs === 'fontSize' ?
                 <ul className="flex flex-row min-w-fit *:bg-[#F8F7FC] *:h-16 *:min-w-[73px] *:px-6 *:w-fit *:flex *:items-center *:justify-center">
                     {[1, 2, 3].map((opt: any) => <button
-                        className='relative flex flex-row gap-3 items-center hover:bg-black-400 !min-w-fit'
+                        className='relative flex flex-row gap-3 items-center hover:bg-black-400 !min-w-fit' key={opt}
                         onClick={() => { editor?.commands.setHeading({ level: opt }); setMenuIs(''); setFontSize(opt) }} >{opt}x</button>)}
                 </ul> : null}
             {menuIs === '' ? <>
                 <div className="flex flex-row min-w-fit *:bg-[#F8F7FC] *:h-16 *:min-w-[73px] *:px-6 *:w-fit *:flex *:items-center *:justify-center">
                     {orderLists.map((a) =>
-                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action}>
+                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action} key={a.title}>
                             <Image src={`/assets/${a.icon}.svg`} height={25} width={25} alt="" />
                         </button>
                     )}
                 </div>
                 <div className="flex flex-row min-w-fit *:bg-[#F8F7FC] *:h-16 *:min-w-[73px] *:px-6 *:w-fit *:flex *:items-center *:justify-center">
                     {alignLists.map((a) =>
-                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action}>
+                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action} key={a.title}>
                             <Image src={`/assets/${a.icon}.svg`} height={25} width={25} alt="" />
                         </button>
                     )}
                 </div>
                 <div className="flex flex-row min-w-fit *:bg-[#F8F7FC] *:h-16 *:min-w-[73px] *:px-6 *:w-fit *:flex *:items-center *:justify-center">
                     {stylingLists.map((a) =>
-                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action}>
+                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action} key={a.title}>
                             <Image src={`/assets/${a.icon}.svg`} height={25} width={25} alt="" />
                         </button>
                     )}
@@ -121,7 +121,7 @@ const EditorToolBar = (Props: { editor: Editor | null; }) => {
                         onClick={() => setMenuIs('fontSize')}>
                         <Image src={"/assets/formatting.svg"} height={40} width={40} alt="" /></button>
                     {hostoryLists.map((a) =>
-                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action}>
+                        <button className={`flex flex-row gap-3 items-center hover:bg-black-400 ${editor?.isActive(a.title) ? '!bg-accentEmerald-500 *:invert' : ''}`} onClick={a.action} key={a.title}>
                             <Image src={`/assets/${a.icon}.svg`} height={25} width={25} alt="" />
                         </button>
                     )}
