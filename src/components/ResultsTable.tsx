@@ -19,7 +19,6 @@ export default function ResultsTable(props: any) {
     [list, setList] = useState<listType[]>([]);
   useEffect(() => {
     setList(props.list);
-    console.log('done')
   }, [props.list]);
   return (
     <div className="flex flex-col gap-4 w-full sm:px-11 px-6 max-w-5xl">

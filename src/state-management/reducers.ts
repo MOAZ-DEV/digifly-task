@@ -9,7 +9,6 @@ const initialState = {
     }
 };
 const formReducer = (state = initialState, action: { type: any; payload: { fieldName: any; value: any; }; }) => {
-   console.dir(state)
     switch (action.type) {
         case 'UPDATE_FORM_FIELD':
             return {

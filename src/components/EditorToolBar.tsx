@@ -28,7 +28,7 @@ const EditorToolBar = (Props: { editor: Editor | null; }) => {
         },
         {
             icon: 'outdent',
-            title: 'indent',
+            title: 'outdent',
             action: () => { },
         },
         {

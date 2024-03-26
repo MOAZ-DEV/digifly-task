@@ -24,9 +24,14 @@ export default function Home() {
   const
     [usersList, setUsersList] = useState([]);
   useEffect(() => {
-    axios
+    try {
+      axios
       .get('http://localhost:1337/user-informations')
-      .then(Response => setUsersList(Response.data));
+      .then(Response => setUsersList(Response.data))
+      .catch(err => console.dir(err))
+    } catch (error) {
+        console.error(error);
+    }
   }, []);
 
   return (
