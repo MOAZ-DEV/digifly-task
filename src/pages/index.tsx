@@ -9,6 +9,7 @@ import { useRouter } from "next/router";
 import ar from "src/locales/ar";
 import en from "src/locales/en";
 import TiptapEditor from "src/components/TiptapEditor";
+import Link from "next/link";
 
 export default function Home() {
 
@@ -32,7 +33,7 @@ export default function Home() {
     <main lang={locale}
       className="flex flex-col gap-24 h-screen w-screen font-poppins max-w-screen-2xl" style={{ direction: (locale === 'en' ? 'ltr' : 'rtl') }}>
       <nav className="flex flex-row gap-4 items-center justify-between w-full py-6 sm:px-11 px-6">
-        <a href="/"><Image className="w-auto" src="/digifly-logo.svg" height={45} width={65} alt="digifly logo" /></a>
+        <Link href="/"><Image className="w-auto" src="/digifly-logo.svg" height={45} width={65} alt="digifly logo" /></Link>
         <ul className="md:flex flex-row gap-2 hidden">
           {[
             { title: t.home, url: '/home', state: true },
@@ -43,10 +44,10 @@ export default function Home() {
             <li key={title}><a className={`${state ? 'text-accentEmerald-500' : null} hover:text-accentEmerald-500 p-4 text-bases font-normal`} href={url}>{title}</a></li>
           )}
         </ul>
-        <a href={locale === 'en' ? '/ar' : '/en'} className="flex flex-row gap-2 items-center">
+        <Link href={locale === 'en' ? '/ar' : '/en'} className="flex flex-row gap-2 items-center">
           <p className="hover:text-accentEmerald-500 font-medium">{t.lang}</p>
           <Image src={locale === 'en' ? "/egypt.png" : "/united-kingdom.png"} height={25} width={25} alt="egypt flag" />
-        </a>
+        </Link>
       </nav>
       <section className="flex flex-col gap-16">
         <TextWrap title={t.part + '1'} body={t.sp1} />
